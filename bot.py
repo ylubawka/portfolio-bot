@@ -5,8 +5,10 @@ from datetime import datetime
 import os
 
 # Твой токен и ID
-TOKEN = os.getenv('BOT_TOKEN', '8144291272:AAFYBOLhwaLJWNHLryWfjkoQASVo-buwK0w')
-bot = telebot.TeleBot(TOKEN)
+load_dotenv()
+
+# Получаем токен
+TOKEN = os.getenv("BOT_TOKEN")
 ADMIN_ID = 5593462428 
 
 # --- НАСТРОЙКА ПУТИ БАЗЫ ДАННЫХ ---
@@ -145,3 +147,4 @@ if __name__ == '__main__':
     init_db()
     print(f"Бот ylubawka готов! База данных: {DB_PATH}")
     bot.infinity_polling()
+
